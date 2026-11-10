@@ -18,7 +18,7 @@ The original host's action route passes the raw ASR transcript to the action. It
 
 ## Verification boundary
 
-The plugin compiles and its installed bundle loads against the actual host SDK, registers the expected ActionPlugin and exposes its settings view. Seven policy regression tests pass. The review window, editable field, Copy buttons, physical microphone, shortcuts and cross-app behavior still require live verification: desktop capture failed during the automated session. Host API workflow benchmarks do not execute output actions.
+The plugin compiles and its installed bundle loads against the actual host SDK, registers the expected ActionPlugin and exposes its settings view. Seven policy regression tests pass. User-supplied screenshots confirm the real sample window, warning, copy confirmations and microphone → prompt → review route. The user confirmed editing and copying into TextEdit, cancellation, and separate direct Literal insertion. Desktop capture itself failed during the automated session, so these live checks combine supplied screenshot evidence with the user's reports. Host API workflow benchmarks do not execute output actions. Broader editor, permission, cancellation-race and long-recording validation remains future work.
 
 The settings page includes **Try a sample**, demonstrating the observed omission of “without applying it.” It opens the same review action used by dictation and does not record audio or contact a model.
 

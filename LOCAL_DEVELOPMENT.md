@@ -16,7 +16,8 @@ Keep the fork's default branch aligned with upstream. Do not force-push or move 
 
 - Builds and audio-file API replay succeeded with Apple Speech plus Apple Intelligence and with optional Qwen3 4B Q4 via the existing upstream llama.cpp plugin.
 - The review action's seven policy tests pass. They expose, rather than solve, the limits of checking semantic faithfulness.
-- User-supplied screenshots confirm real microphone → prompt → review behavior and copy confirmations. Editing success is user-reported. Literal direct insertion remains under clarification; do not mark the whole workflow passed from an aggregate answer.
+- User-supplied screenshots confirm real microphone → prompt → review behavior, preservation of the test prohibition, and copy confirmations. The user also confirmed editing, cancellation, and a separate Literal test that inserted directly into TextEdit.
+- Checked shortcuts: Control–Option–Space for Local Prompt; Control–Option–L for Local Literal. Quick taps toggle recording; holding longer than one second uses push-to-talk. Literal's former four-key shortcut was replaced to make testing unambiguous; no host hotkey defect was established.
 - The default Escape behavior asks for a second Escape press to confirm cancellation.
 - The full upstream test target did not build because the Metal compiler component was unavailable. Its download stalled. Do not claim upstream CI passed.
 - The plugin keeps a user review step because both tested language models made substantive rewrite errors on some synthetic cases.
@@ -27,3 +28,7 @@ Keep the fork's default branch aligned with upstream. Do not force-push or move 
 Build the pinned host Debug scheme with its documented direct-distribution instructions. Pass its Debug product directory to `python3 LocalExtensions/LocalPromptReview/build.py <products>`; the directory must contain the matching `TypeWhisperPluginSDK.swiftmodule` and `PackageFrameworks/TypeWhisperPluginSDK.framework`. Run `swift test --package-path LocalExtensions/LocalPromptReview` for the isolated policy tests.
 
 Personal workflow exports, recordings, screenshots, model weights, local tokens, signing keys, logs and generated app bundles stay outside this repository. Preserve GPL notices. The host and plugin require no Apple Development private key for the ad-hoc prototype.
+
+## Working checkpoint
+
+Treat the current 0.1.0 plugin and installed host as the first working prototype. Core live behavior has been checked with the user; this is not a certification across editors, accents, recording lengths, permission changes, or app-focus races. Do not claim a full upstream test-suite pass. Next work should start as a separate bounded change, with missing-action delivery hardening and broader speech evaluation considered separately from UI refinements.

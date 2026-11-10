@@ -37,3 +37,13 @@ When a change shows in motion (a flow, an animation, live updates, text inserted
 - `APPSTORE` code must keep the direct-distribution app unchanged; verify both builds when touching shared files.
 - Build and launch the sandboxed edition with `scripts/appstore/build-dev.sh --run`; run `scripts/appstore/release-audit.sh` before App Store releases.
 - See `docs/appstore/README.md` for decisions, the bundled plugin list and the release workflow.
+
+## Local fork workflow
+
+For work in `Elliot-Becker/typewhisper-mac`, read `LOCAL_DEVELOPMENT.md` first.
+
+- Keep changes in our fork on focused feature branches. Make one bounded change, run its relevant checks, and verify its actual behavior before expanding scope.
+- Preserve the last checked build and configuration as a rollback point. Do not silently upgrade the pinned host while validating a plugin change.
+- Obtain Elliot's explicit confirmation before opening any upstream issue or pull request, requesting upstream review, accepting a CLA, or merging upstream-facing work.
+- Keep personal recordings, screenshots, model weights, workflow exports, logs, credentials and generated apps outside Git. Never attach private test content to an upstream PR.
+- Keep these fork-specific instructions and evaluation notes out of an eventual upstream feature diff unless requested.
